@@ -1,0 +1,9 @@
+services:
+  docs:
+    image: nginx:alpine
+    container_name: openapi-docs
+    ports:
+      - "8080:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./openapi.yaml:/usr/share/nginx/html/openapi.yaml:ro
